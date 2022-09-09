@@ -21,7 +21,7 @@ $smtpUsuario = "no-reply@iuindustrial.com.ar";  // Mi cuenta de correo
 $smtpClave = "ab*0Zz12dF";  // Mi contraseña
 
 // Email donde se enviaran los datos cargados en el formulario de contacto
-$emailDestino = "jfpetrelli@gmail.com";
+$emailDestino = "contacto@iuindustrial.com.ar";
 
 $mail = new PHPMailer();
 $mail->IsSMTP();
@@ -49,7 +49,9 @@ $mail->Body = $mensajeHtml; // Texto del email en formato HTML
 
 $estadoEnvio = $mail->Send(); 
 if($estadoEnvio){
-    echo "El correo fue enviado correctamente.";
+    header ('Location: ../../index.html');
+    echo "<h4>El correo fue enviado correctamente!</h4>";
 } else {
-    echo "Ocurrió un error inesperado.";
+    header ('Location: ../../index.html');
+    echo "<h4>Ocurrió un error inesperado!</h4>";
 }
